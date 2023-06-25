@@ -24,8 +24,12 @@ const ChessBoardComponent: React.FC = () => {
         // Update the game state and force a re-render
         setGame(new Chess(game.fen()));
         setStylesOfMovedSquares({
-          [move.sourceSquare.toString()]: { backgroundColor: "yellow" },
-          [move.targetSquare.toString()]: { backgroundColor: "yellow" },
+          [move.sourceSquare.toString()]: {
+            backgroundColor: "rgba(255, 255, 0, 0.6)",
+          },
+          [move.targetSquare.toString()]: {
+            backgroundColor: "rgba(255, 255, 0, 0.6)",
+          },
         });
 
         // if (chessPiecesOrientation === "black")
@@ -73,6 +77,12 @@ const ChessBoardComponent: React.FC = () => {
         onMouseOverSquare={onMouseOverSquare}
         squareStyles={stylesOfSqures}
         orientation={chessPiecesOrientation}
+        boardStyle={{
+          borderRadius: "5px",
+          boxShadow: `0 5px 15px rgba(0, 0, 0, 0.5)`,
+        }}
+        lightSquareStyle={{ backgroundColor: "AliceBlue" }}
+        darkSquareStyle={{ backgroundColor: "CornFlowerBlue" }}
       />
     </div>
   );
